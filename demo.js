@@ -9,6 +9,13 @@ let characters=[];
 let songs=[];
 let fight=[];
 let bgNum=0;
+let charaterPosX;
+let charaterPosY;
+let charaterPosW=150;
+let charaterPosH=150;
+let step=0;
+let ch=0;
+let songFlag=0;
 function preload() {
   //because the file name is in sequence, i was inspired to load them in array,so that it can be more convenient and clear. inspiration:https://www.youtube.com/watch?v=pbUyIhtGuhc
   for(let i=0;i<2;i++){
@@ -36,11 +43,11 @@ function preload() {
   }
 }
 
-let charaterPosX;
-let charaterPosY;
-let charaterPosW=150;
-let charaterPosH=150;
 function setup() {
+  button = createButton("play");
+  songs[0].loop;
+  button.position(0,400);
+button.mousePressed(togglePlaying);
   createCanvas(800, 500);
   imageMode(CENTER);
   charaterPosX=width/5;
@@ -49,12 +56,11 @@ function setup() {
   let toolY=height/10;
   characters.push(new Character(charaterPosX,charaterPosY,0,toolX,toolY))//0--left;
   characters.push(new Character(width-charaterPosX,charaterPosY,1,width-toolX,toolY));//1--right
-  songs[0].loop();
   frameRate(15);
+ 
+
 }
-let step=0;
-let ch=0;
-let songFlag=0;
+
 function draw() {
   background(220);
   image(bg[bgNum],width/2,height/2,width,height);
@@ -83,4 +89,8 @@ function draw() {
       songs[2].loop();
     }
   }
+}
+function togglePlaying(){
+  songs[0].play(); 
+ 
 }
