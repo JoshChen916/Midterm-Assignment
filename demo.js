@@ -9,6 +9,7 @@ let characters=[];
 let songs=[];
 let fight=[];
 let bgNum=0;
+let button;
 let charaterPosX;
 let charaterPosY;
 let charaterPosW=150;
