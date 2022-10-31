@@ -30,10 +30,10 @@ class Character {
     //because i have images in different sequences, so I put them in different arraies: ball[0]-left one,ball[1]-right one; pk[0]-pk1.png(left),pk[2]-pk3.png(right);tool[0]-left,tool[1]-right
     }
   }
-  //Thank you my friend xiao for helping me for this part
+  //Thank you my friend xiao for helping me in this part
   clickShoot() {
     if(mouseIsPressed && millis()-this.timer>400){//dalay: detect the time to aviod both changing and shooting inspiration& referrence:https://forum.processing.org/two/discussion/22459/how-to-use-timer-millis-properly.html;https://forum.processing.org/one/topic/create-a-delay.html
-      this.timer=millis();
+      this.timer=millis(); //Update the time the bullet was fired, otherwise delay only works the first time
       if(this.step0Clicked==0){
         if(abs(mouseX-this.x)<this.w/2 && abs(mouseY-this.y)<this.h/2){
             this.step0Clicked=1;
