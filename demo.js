@@ -72,7 +72,7 @@ function draw() {
     characters[i].shooting();
     characters[i].shot();
   }
-  //change the background music with the response of characters--two characters both change->then change the song
+  //change the background music and image number with the response of characters--two characters both change->then change the song
   if(characters[0].step0Clicked==1 && characters[1].step0Clicked==1){
     bgNum=1;
     if(songFlag==0){
