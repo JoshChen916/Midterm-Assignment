@@ -1,4 +1,4 @@
-class Bullet{
+class Bullet{ //bullets move in both X & Y directions, and die if over the page
   constructor(x, y, dir) {
     this.x = x;
     this.vx = random(4,10);
