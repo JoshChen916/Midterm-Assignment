@@ -48,7 +48,8 @@ function setup() {
   button = createButton("play");
   songs[0].loop;
   button.position(0,400);
-button.mousePressed(togglePlaying);// reference: https://www.youtube.com/watch?v=YcezEwOXun4&list=PLRqwX-V7Uu6aFcVjlDAkkGIixw70s7jpW&index=3
+button.mousePressed(togglePlaying);//make button for backgroundmusic
+ //reference: https://www.youtube.com/watch?v=YcezEwOXun4&list=PLRqwX-V7Uu6aFcVjlDAkkGIixw70s7jpW&index=3
   createCanvas(800, 500);
   imageMode(CENTER);
   charaterPosX=width/5;

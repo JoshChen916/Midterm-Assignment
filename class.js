@@ -29,7 +29,7 @@ class Character {
     }
   }
   //Thank you my friend xiao for helping me in this part
-  clickShoot() {
+  clickShoot() { //made detection: in different steps, different functions will happen
     if(mouseIsPressed && millis()-this.timer>400){//dalay: detect the time to aviod both changing images and shooting bullets
        //inspiration& referrence:https://forum.processing.org/two/discussion/22459/how-to-use-timer-millis-properly.html;https://forum.processing.org/one/topic/create-a-delay.html
       this.timer=millis(); //Update the time the bullet was fired, otherwise delay only works the first time
@@ -56,18 +56,19 @@ class Character {
       }
     }
   }
-  shooting(){
+  shooting(){  //let bullet die if it is over the screen, otherwise it will restore all, harm to your laptop.-->advice and thank you my friend Xiao
     for(let i=0;i<this.bullets.length;i++){
       this.bullets[i].move();
       if(this.bullets[i].die()){
         this.bullets.splice(i,i+1);// referrence:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
       //splice i,i+1 delete from i ->i+1 not include i+1
-        //let bullet die if it is over the screen, otherwise it will restore all, harm to your laptop.-->advice and thank you my friend Xiao
+       
       }
     }
   }
   shot(){
-    // Determine pokemons whether have been hit by bullets
+    // Determine pokemons whether have been hit by bullets,（Splice out/delete bullets, hit sound triggered)
+
     for(let i=0;i<characters[1-this.dir].bullets.length;i++){
       let chx=characters[1-this.dir].bullets[i].x;
       let chw=characters[1-this.dir].bullets[i].w;   
