@@ -30,7 +30,8 @@ class Character {
   }
   //Thank you my friend xiao for helping me in this part
   clickShoot() {
-    if(mouseIsPressed && millis()-this.timer>400){//dalay: detect the time to aviod both changing and shooting inspiration& referrence:https://forum.processing.org/two/discussion/22459/how-to-use-timer-millis-properly.html;https://forum.processing.org/one/topic/create-a-delay.html
+    if(mouseIsPressed && millis()-this.timer>400){//dalay: detect the time to aviod both changing images and shooting bullets
+       //inspiration& referrence:https://forum.processing.org/two/discussion/22459/how-to-use-timer-millis-properly.html;https://forum.processing.org/one/topic/create-a-delay.html
       this.timer=millis(); //Update the time the bullet was fired, otherwise delay only works the first time
       if(this.step0Clicked==0){
         if(abs(mouseX-this.x)<this.w/2 && abs(mouseY-this.y)<this.h/2){
@@ -49,7 +50,7 @@ class Character {
       }else{//in short of this.step0Clicked==2
         if(abs(mouseX-this.x)<this.w/2 && abs(mouseY-this.y)<this.h/2){
           this.bullets.push(new Bullet(this.x,this.y,this.dir));
-        }//final mode can send out bullets:Troubleshoot:I firstly put this sentence above and it went into bug. 
+        }//final step can send out bullets:Troubleshoot:I firstly put this sentence above and it went into bug. 
         //Answer from TA Dawn: There are 3 steps for Pokémons →0,1,2 . The first if is for step 0: put Pokémon out, the second is for what normal Pokémon can do, this else is for step 2, they can still send out bullets. So the error is that I put something in step 2 into step 1. They need to be separated because their functions are “irrelevant”.
         
       }
