@@ -66,7 +66,7 @@ function draw() {
   background(220);
   image(bg[bgNum],width/2,height/2,width,height);
 
-  for (let i = 0; i < characters.length; i++) {
+  for (let i = 0; i < characters.length; i++) {//call the class Character
     characters[i].move();
     characters[i].clickShoot();
     characters[i].shooting();
