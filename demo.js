@@ -48,7 +48,7 @@ function setup() {
   button = createButton("play");
   songs[0].loop;
   button.position(0,400);
-button.mousePressed(togglePlaying);
+button.mousePressed(togglePlaying);// reference: https://www.youtube.com/watch?v=YcezEwOXun4&list=PLRqwX-V7Uu6aFcVjlDAkkGIixw70s7jpW&index=3
   createCanvas(800, 500);
   imageMode(CENTER);
   charaterPosX=width/5;
@@ -66,13 +66,13 @@ function draw() {
   background(220);
   image(bg[bgNum],width/2,height/2,width,height);
 
-  for (let i = 0; i < characters.length; i++) {//call the class Character
+  for (let i = 0; i < characters.length; i++) {//call functions from class Character
     characters[i].move();
     characters[i].clickShoot();
     characters[i].shooting();
     characters[i].shot();
   }
-  //change the background music and image number with the response of characters--two characters both change->then change the song
+  //change the background music and image number with the response of characters--two characters both change->then change the song+image number
   if(characters[0].step0Clicked==1 && characters[1].step0Clicked==1){
     bgNum=1;
     if(songFlag==0){

@@ -10,8 +10,6 @@ class Character {
     this.y1 = y1;
     this.toolW = 100+(1-dir)*30;//the left one is a little small,increase its size
     this.toolH = 100+(1-dir)*30;
-    this.toolW1 = 100;
-    this.toolH1 = 100;
     this.moveH = 10;
     this.moveW = 10;
     this.dir= dir;//0-left 1-right
