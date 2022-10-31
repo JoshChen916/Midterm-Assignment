@@ -19,7 +19,7 @@ class Character {
     this.timer=0;
   }
   
-  move() {//clicked the ball-->pokemons + tools appear
+  move() {//change images in different steps
     if(this.step0Clicked==0){
         image(ball[1-this.dir],this.x+random(-this.moveW, this.moveW), this.y+random(-this.moveH, this.moveH), this.w, this.h);
     }else if(this.step0Clicked>=1){
@@ -45,13 +45,12 @@ class Character {
         if(abs(mouseX-this.x1)<this.toolW/2 && abs(mouseY-this.y1)<this.toolH/2){
           this.step0Clicked=2;
           this.imNum=this.imNum+1;
-          //all these functions is for state one
-        }//change into final mode!!!!!
+        }
       }else{//in short of this.step0Clicked==2
         if(abs(mouseX-this.x)<this.w/2 && abs(mouseY-this.y)<this.h/2){
           this.bullets.push(new Bullet(this.x,this.y,this.dir));
         }//final mode can send out bullets:Troubleshoot:I firstly put this sentence above and it went into bug. 
-        //Answer from TA Dawn: There are 3 states for pokemons-0,1,2 the first if is for state 0:put pokemon out, the second is for what normal pokemon can do, this else is for state 2, they can still send out bullets. They are separated and irrelavant to each other.
+        //Answer from TA Dawn: There are 3 steps for Pokémons →0,1,2 . The first if is for step 0: put Pokémon out, the second is for what normal Pokémon can do, this else is for step 2, they can still send out bullets. So the error is that I put something in step 2 into step 1. They need to be separated because their functions are “irrelevant”.
         
       }
     }
@@ -67,7 +66,7 @@ class Character {
     }
   }
   shot(){
-    // Determine whether have been hit by bullets
+    // Determine pokemons whether have been hit by bullets
     for(let i=0;i<characters[1-this.dir].bullets.length;i++){
       let chx=characters[1-this.dir].bullets[i].x;
       let chw=characters[1-this.dir].bullets[i].w;   

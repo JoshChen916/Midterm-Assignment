@@ -1,4 +1,4 @@
-class Bullet{ //bullets move in both X & Y directions, and die if over the page
+class Bullet{ //bullets move in both X & Y directions, and the detection of whether outside the page—return true, else false
   constructor(x, y, dir) {
     this.x = x;
     this.vx = random(4,10);
